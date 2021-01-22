@@ -3,12 +3,16 @@ import { defineComponent, h, inject, ref } from 'vue';
 export default defineComponent({
 	name: 'accordion-panel-header',
 
+	inheritAttrs: false,
+
 	props: {
 		index: { type: Number, required: true },
 		panel_id: { type: String, required: true },
 	},
 
-	setup(props, { slots }) {
+	setup(props, { slots, attrs }) {
+		console.log(attrs);
+
 		const active_indexes = inject('active_indexes', ref(0));
 		const header_tag = inject('header_tag');
 		const collapsible = inject('collapsible');
@@ -22,7 +26,7 @@ export default defineComponent({
 
 				active_indexes.value.push(props.index);
 			} else {
-				if (collapsible) {
+				if (collapsible || (!collapsible && active_indexes.value.length > 1)) {
 					active_indexes.value = active_indexes.value.filter(i => i !== props.index);
 				}
 			}
@@ -84,11 +88,12 @@ export default defineComponent({
 					h(
 						'button',
 						{
-							class: 'accordion__panel-header-toggle',
+							...attrs,
+							class: ['accordion__panel-header-toggle', attrs.class || ''].join(' ').trim(),
 							id: `${props.panel_id}-toggle`,
 							'aria-expanded': is_active,
 							'aria-controls': `${props.panel_id}-content`,
-							'aria-disabled': is_active && !collapsible ? true : false,
+							'aria-disabled': is_active && (!collapsible ? true : false),
 							'data-index': props.index,
 							onClick: handle_click,
 							onKeydown: handle_keydown,

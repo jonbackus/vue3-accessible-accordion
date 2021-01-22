@@ -1,7 +1,7 @@
 <template>
-	<accordion v-model="active_panel" :collapsible="false">
+	<accordion v-model="active_panel" :collapsible="false" :expandable="true">
 		<accordion-panel id="events">
-			<accordion-panel-header>Events</accordion-panel-header>
+			<accordion-panel-header data-foo="bar" v-bind:is_active="{is_active}">Events {{is_active}}</accordion-panel-header>
 			<accordion-panel-content>event event event</accordion-panel-content>
 		</accordion-panel>
 
@@ -10,7 +10,13 @@
 				<span>Results</span>
 				<span>&gt;</span>
 			</accordion-panel-header>
-			<accordion-panel-content>Baz baz baz</accordion-panel-content>
+			<accordion-panel-content>
+				<div>Baz baz baz</div>
+
+				<a href="#">Link</a><br />
+
+				<input type="text" placeholder="First name" />
+			</accordion-panel-content>
 		</accordion-panel>
 	</accordion>
 </template>
@@ -21,7 +27,7 @@ export default {
 	name: 'App',
 
 	setup() {
-		const active_panel = ref([1]);
+		const active_panel = ref([0]);
 
 		return {
 			active_panel,

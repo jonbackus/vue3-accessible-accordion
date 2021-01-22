@@ -39,7 +39,12 @@ export default defineComponent({
 			return h(
 				'div',
 				{
-					class: ['accordion__panel', active_indexes.value.includes(props.index) ? 'is-active' : '']
+					...attrs,
+					class: [
+						'accordion__panel',
+						active_indexes.value.includes(props.index) ? 'is-active' : '',
+						attrs.class,
+					]
 						.join(' ')
 						.trim(),
 					id: id,

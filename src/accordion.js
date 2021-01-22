@@ -8,7 +8,7 @@ export default defineComponent({
 		expandable: { type: Boolean, required: false, default: false },
 	},
 
-	setup(props, { emit, slots }) {
+	setup(props, { emit, slots, attrs }) {
 		provide('active_indexes', ref(props.modelValue.slice() || []));
 		provide('header_tag', props.headerTag);
 		provide('collapsible', props.collapsible);
@@ -72,6 +72,7 @@ export default defineComponent({
 			return h(
 				'div',
 				{
+					...attrs,
 					class: 'accordion',
 				},
 				accordion_groups.map((child, child_index) =>
