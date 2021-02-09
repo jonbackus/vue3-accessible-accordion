@@ -1,8 +1,8 @@
 <template>
-	<accordion v-model="active_panel" :collapsible="false" :expandable="true">
+	<accordion :collapsible="false" :expandable="true">
 		<accordion-panel id="events">
 			<accordion-panel-header v-slot="{ isActive }">
-				<span :class="{'font-weight-bold': isActive }">Events {{isActive}}</span>
+				<span :class="{ 'font-weight-bold': isActive }">Events {{ isActive }}</span>
 			</accordion-panel-header>
 			<accordion-panel-content>event event event</accordion-panel-content>
 		</accordion-panel>

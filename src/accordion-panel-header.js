@@ -98,7 +98,7 @@ export default defineComponent({
 							onClick: handle_click,
 							onKeydown: handle_keydown,
 						},
-						slots.default ? slots.default({isActive: is_active}) : ['Panel Toggle'],
+						slots.default ? slots.default({ isActive: is_active }) : ['Panel Toggle'],
 					),
 				),
 			);
