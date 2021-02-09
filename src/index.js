@@ -11,3 +11,5 @@ export default {
 		app.component('accordion-panel-content', AccordionPanelContent);
 	},
 };
+
+export { Accordion, AccordionPanel, AccordionPanelHeader, AccordionPanelContent };
