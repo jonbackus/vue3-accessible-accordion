@@ -16,7 +16,7 @@ yarn add vue3-acccessible-accordion
 
 ## Register as a Global Component
 
-```
+```js
 import { createApp } from 'vue';
 import App from './App.vue'
 import vue3_accessible_accordion from 'vue3-accessible-accordion';
@@ -28,7 +28,7 @@ const app = createApp(App)
 
 ## Register Components Individually
 
-```
+```js
 import Accordion, AccordionPanel, AccordionPanelHeader, AccordionPanelContent from 'vue3-accessible-accordion';
 
 export default {
