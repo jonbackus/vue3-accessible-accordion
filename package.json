@@ -1,6 +1,6 @@
 {
 	"name": "vue3-accessible-accordions",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A Vue 3 plugin offering a WAI-ARIA compliant accordion design pattern implementation",
 	"scripts": {
 		"serve": "vue-cli-service serve",
