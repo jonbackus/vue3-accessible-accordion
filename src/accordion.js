@@ -1,4 +1,4 @@
-import { defineComponent, h, provide, ref, watch, inject } from 'vue';
+import { defineComponent, h, provide, ref, watch } from 'vue';
 
 export default defineComponent({
 	props: {
@@ -9,12 +9,12 @@ export default defineComponent({
 	},
 
 	setup(props, { emit, slots, attrs }) {
-		provide('active_indexes', ref(props.modelValue.slice() || []));
+		const active_indexes = ref(props.modelValue.slice());
+
+		provide('active_indexes', active_indexes);
 		provide('header_tag', props.headerTag);
 		provide('collapsible', props.collapsible);
 		provide('expandable', props.expandable);
-
-		const active_indexes = inject('active_indexes', ref(props.modelValue.slice() || []));
 
 		watch(
 			() => active_indexes.value,
