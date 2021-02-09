@@ -34,7 +34,11 @@ export default defineComponent({
 		}
 
 		return () => {
-			const id = attrs.id || `tab-${Math.floor(Math.random() * 100000)}`;
+			const id =
+				attrs.id ||
+				`tab-${Math.random()
+					.toString(36)
+					.substr(2, 9)}`;
 
 			return h(
 				'div',
