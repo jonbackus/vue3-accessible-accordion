@@ -5,13 +5,13 @@ A simple accordion component plugin for Vue 3. Follows the [Accordion Design Pat
 ## Install
 
 ```
-npm i vue3-accessible-accordion
+npm i vue3-accessible-accordions
 ```
 
 or
 
 ```
-yarn add vue3-acccessible-accordion
+yarn add vue3-acccessible-accordions
 ```
 
 ## Register as a Global Component
@@ -19,17 +19,17 @@ yarn add vue3-acccessible-accordion
 ```js
 import { createApp } from 'vue';
 import App from './App.vue'
-import vue3_accessible_accordion from 'vue3-accessible-accordion';
+import vue3_accessible_accordions from 'vue3-accessible-accordions';
 
 const app = createApp(App)
-			.use(vue3_accessible_accordion);
+			.use(vue3_accessible_accordions);
 			.mount('#app')
 ```
 
 ## Register Components Individually
 
 ```js
-import Accordion, AccordionPanel, AccordionPanelHeader, AccordionPanelContent from 'vue3-accessible-accordion';
+import Accordion, AccordionPanel, AccordionPanelHeader, AccordionPanelContent from 'vue3-accessible-accordions';
 
 export default {
 	components: {
