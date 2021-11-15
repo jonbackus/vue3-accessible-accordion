@@ -54,7 +54,6 @@ export default {
 		<accordion-panel-header>Question 2</accordion-panel-header>
 		<accordion-panel-content>Answer to FAQ 2</accordion-panel-content>
 	</accordion-panel>
-	</accordion-panel>
 </accordion>
 ```
 
